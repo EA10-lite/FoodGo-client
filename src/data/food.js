@@ -1,0 +1,111 @@
+export default [
+    { 
+      "_id": 1,
+      "name": "Cheeseburger",
+      "pictures": ["https://img.freepik.com/free-photo/still-life-delicious-american-hamburger_23-2149637315.jpg?ga=GA1.1.318640155.1734634872&semt=ais_hybrid", "https://img.freepik.com/free-photo/closeup-shot-burger-with-bacon-cheese-red-coffee-mug_181624-4345.jpg?ga=GA1.1.318640155.1734634872&semt=ais_hybrid"],
+      "price": 5.99,
+      "restaurant": "Burger Haven",
+      "ingredients": ["Beef patty", "Cheese", "Lettuce", "Tomato", "Pickles", "Bun"],
+      "about": "A classic cheeseburger with fresh ingredients and a juicy beef patty.",
+      "delivery": true,
+      "time": "20 mins",
+      "rating": 4.5
+    },
+    {
+      "_id": 2,
+      "name": "Pepperoni Pizza",
+      "pictures": ["https://img.freepik.com/free-photo/slice-cut-from-classic-pepperoni-pizza-with-green-pepper-rolls_114579-1963.jpg?ga=GA1.1.318640155.1734634872&semt=ais_hybrid", "https://img.freepik.com/free-photo/crispy-pizza-with-cheese-tomatoes-sausage_140725-4611.jpg?ga=GA1.1.318640155.1734634872&semt=ais_hybrid"],
+      "price": 10.99,
+      "restaurant": "Pizza Palace",
+      "ingredients": ["Pizza dough", "Tomato sauce", "Cheese", "Pepperoni"],
+      "about": "A delicious pizza topped with crispy pepperoni and gooey cheese.",
+      "delivery": true,
+      "time": "30 mins",
+      "rating": 4.7
+    },
+    {
+      "_id": 3,
+      "name": "Chicken Shawarma",
+      "pictures": ["https://img.freepik.com/free-photo/arabic-shaurma-stuffings-inside-lavash_114579-3093.jpg?ga=GA1.1.318640155.1734634872&semt=ais_hybrid", "https://img.freepik.com/free-photo/side-view-chicken-roll-grilled-chicken-lettuce-cucumber-tomato-mayo-pita_141793-4849.jpg?ga=GA1.1.318640155.1734634872&semt=ais_hybrid"],
+      "price": 4.99,
+      "restaurant": "Shawarma King",
+      "ingredients": ["Chicken", "Flatbread", "Garlic sauce", "Cabbage", "Carrots"],
+      "about": "Middle Eastern-style chicken wrapped in soft flatbread with tangy garlic sauce.",
+      "delivery": true,
+      "time": "15 mins",
+      "rating": 4.3
+    },
+    {
+      "_id": 4,
+      "name": "Sushi Platter",
+      "pictures": ["https://img.freepik.com/free-photo/sushi-plate-with-various-filling_140725-4213.jpg?ga=GA1.1.318640155.1734634872&semt=ais_hybrid", "https://img.freepik.com/free-photo/various-sushi-rolls-plate_140725-4318.jpg?ga=GA1.1.318640155.1734634872&semt=ais_hybrid"],
+      "price": 19.99,
+      "restaurant": "Sushi World",
+      "ingredients": ["Rice", "Nori", "Tuna", "Salmon", "Avocado"],
+      "about": "An assortment of freshly prepared sushi rolls with premium ingredients.",
+      "delivery": false,
+      "time": "25 mins",
+      "rating": 4.8
+    },
+    {
+      "_id": 5,
+      "name": "Veggie Burger",
+      "pictures": ["https://img.freepik.com/free-photo/front-view-vegetarian-burger-counter-with-tomatoes_23-2148784525.jpg?ga=GA1.1.318640155.1734634872&semt=ais_hybrid", "https://img.freepik.com/free-photo/close-up-vegetarian-burger-cutting-board_23-2148784533.jpg?ga=GA1.1.318640155.1734634872&semt=ais_hybrid"],
+      "price": 7.49,
+      "restaurant": "Burger Haven",
+      "ingredients": ["Vegetable patty", "Lettuce", "Tomato", "Avocado", "Bun"],
+      "about": "A healthy burger option with a flavorful vegetable patty and fresh toppings.",
+      "delivery": true,
+      "time": "20 mins",
+      "rating": 4.2
+    },
+    {
+      "_id": 6,
+      "name": "Margherita Pizza",
+      "pictures": ["https://img.freepik.com/premium-photo/pizza_538646-1920.jpg?ga=GA1.1.318640155.1734634872&semt=ais_hybrid", "https://img.freepik.com/premium-photo/homemade-pizza-with-mozzarella-grey_1220-4473.jpg?ga=GA1.1.318640155.1734634872&semt=ais_hybrid"],
+      "price": 9.99,
+      "restaurant": "Pizza Palace",
+      "ingredients": ["Pizza dough", "Tomato sauce", "Mozzarella", "Basil"],
+      "about": "A traditional Italian pizza with simple and fresh ingredients.",
+      "delivery": true,
+      "time": "25 mins",
+      "rating": 4.6
+    },
+    {
+      "_id": 7,
+      "name": "Grilled Chicken Sandwich",
+      "pictures": ["https://img.freepik.com/free-photo/baguette-sandwich-with-mixed-ingredients-french-fries-wooden-board_114579-2975.jpg?ga=GA1.1.318640155.1734634872&semt=ais_hybrid", "https://img.freepik.com/free-photo/side-view-club-sandwich-with-grilled-chicken-tomato-cucumber-lettuce-mayo-ketchup-french-fries-board_141793-4865.jpg?ga=GA1.1.318640155.1734634872&semt=ais_hybrid"],
+      "price": 6.99,
+      "restaurant": "Sandwich Stop",
+      "ingredients": ["Grilled chicken", "Lettuce", "Tomato", "Mayonnaise", "Whole grain bread"],
+      "about": "A hearty sandwich with tender grilled chicken and fresh veggies.",
+      "delivery": true,
+      "time": "15 mins",
+      "rating": 4.4
+    },
+    {
+      "_id": 8,
+      "name": "Falafel Wrap",
+      "pictures": ["https://img.freepik.com/free-photo/kebab-wrap-with-meat-vegetables_23-2148632636.jpg?ga=GA1.1.318640155.1734634872&semt=ais_hybrid", "https://img.freepik.com/free-photo/side-view-chicken-roll-fried-chicken-strips-with-mayo-tomato-lettuce-wrapped-tortilla_141793-4847.jpg?ga=GA1.1.318640155.1734634872&semt=ais_hybrid"],
+      "price": 5.99,
+      "restaurant": "Shawarma King",
+      "ingredients": ["Falafel", "Flatbread", "Tahini", "Pickles", "Tomato"],
+      "about": "A vegetarian wrap made with crunchy falafel and creamy tahini sauce.",
+      "delivery": true,
+      "time": "15 mins",
+      "rating": 4.1
+    },
+    {
+      "_id": 9,
+      "name": "Tacos",
+      "pictures": ["https://img.freepik.com/free-photo/mexican-tacos-with-meat-vegetables-red-onion_2829-8665.jpg?ga=GA1.1.318640155.1734634872&semt=ais_hybrid", "https://img.freepik.com/free-photo/delicious-tacos-arrangement_23-2151047929.jpg?ga=GA1.1.318640155.1734634872&semt=ais_hybrid"],
+      "price": 8.99,
+      "restaurant": "Mexican Fiesta",
+      "ingredients": ["Tortilla", "Beef", "Lettuce", "Tomato", "Cheese", "Sour cream"],
+      "about": "Soft tortilla tacos filled with flavorful beef and fresh toppings.",
+      "delivery": true,
+      "time": "20 mins",
+      "rating": 4.5
+    },
+  ]
+  

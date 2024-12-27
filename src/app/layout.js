@@ -1,10 +1,21 @@
+import React from "react";
 import "./globals.css";
+import { Toaster } from "@/components/ui/toaster";
+import AppLayout from "@/containers/AppLayout";
+
+export const metadata = {
+  title: "FoodGo",
+  description: "",
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        {children}
+      <body className="h-[100vh] w-full">
+          <Toaster className="fixed top-0 left-0" />
+          <AppLayout>
+            {children}
+          </AppLayout>
       </body>
     </html>
   );
