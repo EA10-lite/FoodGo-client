@@ -20,6 +20,8 @@ module.exports = {
   			secondary: '#98A8B8',
   			dark: '#121223',
   			white: '#fff',
+			error: '#FF218C',
+			success: '#4bb543',
   			sidebar: {
   				DEFAULT: 'hsl(var(--sidebar-background))',
   				foreground: 'hsl(var(--sidebar-foreground))',
@@ -30,7 +32,13 @@ module.exports = {
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
   			}
-  		}
+  		},
+		screens: {
+			sm: '576px',
+			md: '768px',
+			lg: '991px',
+			xl: '1280px'
+		},
   	}
   },
   plugins: [require("tailwindcss-animate")],
