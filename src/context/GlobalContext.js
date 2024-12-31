@@ -20,6 +20,7 @@ const GlobalProvider = ({ children }) => {
             localStorage.setItem("foodgo-user", JSON.stringify(temp_data));
             localStorage.setItem("foodgo-token", JSON.stringify(data?.access_token));
             setUser(temp_data);
+            window.location.href = "/";
         } catch (error) {
             console.error('Error storing data', error);
         }
