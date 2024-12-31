@@ -31,6 +31,7 @@ const GlobalProvider = ({ children }) => {
         localStorage.removeItem("foogo-token");
 
         setUser();
+        window.location.href = "/login";
     }
 
     const getStoredData = async () => {
@@ -39,7 +40,7 @@ const GlobalProvider = ({ children }) => {
             setUser(JSON.parse(response));
         }
         else {
-            if(!pathname.includes("/login") && !pathname.includes("/signup") && !pathname.includes("/forgot-password")) {
+            if(!pathname.includes("/login") && !pathname.includes("/signup") && !pathname.includes("/forgot-password") && !pathname.includes("/reset-password")) {
                 window.location.href = "/login";
             }
             console.log("no user found");

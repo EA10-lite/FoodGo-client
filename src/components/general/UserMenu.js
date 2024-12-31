@@ -6,10 +6,13 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import User from "./User";
+import { useGlobalContext } from "@/context/GlobalContext";
 
 
 
 const UserMenu = ({ initials, img }) => {
+  const { logout } = useGlobalContext();
+  
   return (
     <Popover>
       <PopoverTrigger asChild>
@@ -29,7 +32,7 @@ const UserMenu = ({ initials, img }) => {
                 <li className="text-[#1E1E1E] text-sm leading-[24px] py-[12px] px-[24px] border-t border-[#D9D9D9]"> <Link href="/settings"> $ USD </Link></li>
                 <li className="text-[#1E1E1E] text-sm leading-[24px] py-[12px] px-[24px] border-b border-[#D9D9D9]"> <Link href="/settings"> Language </Link></li>
                 <li className="text-[#1E1E1E] text-sm leading-[24px] py-[12px] px-[24px]"> <Link href="/settings"> Refer a friend </Link></li>
-                <li className="text-[#1E1E1E] text-sm leading-[24px] py-[12px] px-[24px]"> Logout </li>
+                <li className="text-[#1E1E1E] text-sm leading-[24px] py-[12px] px-[24px] cursor-pointer" onClick={logout}> Logout </li>
             </ul>
         </div>
       </PopoverContent>

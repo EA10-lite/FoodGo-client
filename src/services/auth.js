@@ -2,7 +2,7 @@ import client from "./client";
 
 
 export const forgotPassword = (body)=> {
-    return client.post("/auth/forgot-password", {...body});
+    return client.post("/auth/forgotPassword", {...body});
 }
 
 
@@ -14,14 +14,10 @@ export const signup = (body)=> {
     return client.post("/auth/signupRestaurant", {...body});
 }
 
-export const resetPassword = (body, email, code)=> {
-    return client.put(`/auth/reset-password?code=${code}&email=${email}`, {...body});
+export const resetPassword = (body)=> {
+    return client.post(`/auth/resetPassword`, {...body});
 }
 
-export const verifyAccount = (code, email)=> {
-    return client.get(`/auth/verify-email?code=${code}&email=${email}`);
-}
-
-export const sendVerificationCode = (body)=> {
-    return client.put(`/auth/verify-email`, {...body});
+export const verifyAccount = (body)=> {
+    return client.post(`/auth/verifyEmail`, {...body});
 }

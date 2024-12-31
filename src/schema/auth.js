@@ -19,24 +19,19 @@ export const login_schema = Yup.object().shape({
 export const forgot_password = Yup.object().shape({
   email,
 });
-
 export const reset_password = Yup.object().shape({
-  new_password: password,
+  code: Yup.string().min(4, "Enter a 4-digit code!").max(4, "Enter a 4-digit code!").required("Verification code required"),
+  password: password,
   confirm_password: 
     Yup.string()
       .label()
       .required('Enter a strong password')
-      .oneOf([Yup.ref('new_Password'), null], 'Passwords must match')
+      .oneOf([Yup.ref('password'), null], 'Passwords must match')
 });
 
 export const signup_schema = Yup.object().shape({
   name: Yup.string().required('Please enter your full name'),
   phone: Yup.string().required('Please enter a valid phone number'),
   email,  
-  password,
-  // confirm_password: 
-  //   Yup.string()
-  //     .label()
-  //     .required('Enter a strong password')
-  //     .oneOf([Yup.ref('password'), null], 'Passwords must match')
+  password
 });
