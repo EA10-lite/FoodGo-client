@@ -4,35 +4,30 @@ import { Formik } from "formik";
 import { Field, Submit } from "@/components/form";
 import Link from "next/link";
 import { Logo } from "@/components/general";
-import { login_schema } from "@/schema/auth";
-import { login } from "@/services/auth";
+import { forgot_password } from "@/schema/auth";
+import { forgotPassword } from "@/services/auth";
 import { useToast } from "@/hooks/use-toast";
-import { useGlobalContext } from "@/context/GlobalContext";
 
 const Page = () => {
     const { toast } = useToast();
-    const { login: userLogin } = useGlobalContext();
 
     const [loading, setLoading] = useState(false);
-    const handleLogin = async (values) => {
+    const handleForgotPassword = async (values) => {
         try {
             setLoading(true);
-            const response = await login(values);
+            const response = await forgotPassword(values);
             if(response?.data?.success) {
                 toast({ 
-                    title: "Login success", 
-                    description: "Redirecting you to dashboard!",
+                    title: "Success", 
+                    description: `Verification code sent to ${values.email}`,
                     top: "0", 
                 })
-
-                console.log("user:  ", response?.data?.result);
-                userLogin(response?.data?.result);
             }
         } catch (error) {
             console.log("error: ", error, error?.response?.data?.message);
             toast({ 
-                title: "Login Failed", 
-                description: error?.response?.data?.message || error?.message || "Failed to login, please try again!", 
+                title: "Failed", 
+                description: error?.response?.data?.message || error?.message || "Failed to send verification code!", 
                 top: "0", 
                 variant: "destructive" 
             })
@@ -48,9 +43,9 @@ const Page = () => {
                 </div>
                 <div className="body">
                     <Formik
-                        initialValues={{ email: "", password: "" }}
-                        onSubmit={(values)=> handleLogin(values)}
-                        validationSchema={login_schema}
+                        initialValues={{ email: "" }}
+                        onSubmit={(values)=> handleForgotPassword(values)}
+                        validationSchema={forgot_password}
                     >
                         {()=> (
                             <>
@@ -61,18 +56,6 @@ const Page = () => {
                                     type="email"
                                 />
 
-                                <Field 
-                                    name="password"
-                                    label='Password'
-                                    type="password"
-                                />
-
-                                <div className="flex items-center mb-[32px] justify-between text-sm font-[500]">
-                                    <p className=""> Remember me </p>
-                                    <Link href="/forgot-password" className="text-primary"> Forgot password ?</Link>
-                                </div>
-
-
                                 <Submit 
                                     title="Signin"
                                     loading={loading}
@@ -81,7 +64,7 @@ const Page = () => {
                         )}
                     </Formik>
 
-                    <p className="text-center font-[500] mt-[20px] text-opacity-60"> Don't have an account ? <Link href="/signup" className="text-primary underline"> signup </Link></p>
+                    <p className="text-center font-[500] mt-[20px] text-opacity-60"> Back to <Link href="/login" className="text-primary underline"> Login </Link></p>
                 </div>
             </div>
         </div>

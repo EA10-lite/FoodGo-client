@@ -1,7 +1,7 @@
 import React from "react";
 import { MdCheck, MdClose } from "react-icons/md";
 import { User } from "../general";
-import { OrderDetails } from "../modals";
+import { OrderDetails, OrderDetailsV2 } from "../modals";
 
 const OrderCard = ({ order }) => {
     return (
@@ -44,7 +44,7 @@ const OrderCard = ({ order }) => {
                             <MdCheck className="text-[18px]" />
                         </button>
                         <button className="border border-primary text-primary flex items-center justify-center w-[32px] h-[32px] rounded-[4px] hover:bg-primary hover:text-white cursor-pointer">
-                            <OrderDetails 
+                            <OrderDetailsV2 
                                 order={order}
                             />
                         </button>

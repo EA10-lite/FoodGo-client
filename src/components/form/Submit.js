@@ -1,5 +1,6 @@
 import React from "react";
 import { useFormikContext } from "formik";
+import { LucideLoader2 } from "lucide-react";
 
 const Submit = ({
     title,
@@ -9,8 +10,12 @@ const Submit = ({
     const { handleSubmit } = useFormikContext();
 
     return (
-        <button type="button" className={`bg-primary text-white w-full px-[16px] py-[12px] rounded-[8px] ${ styles }`} onClick={handleSubmit}>
-            { title }
+        <button type="button" className={`bg-primary text-white w-full px-[16px] py-[12px] rounded-[8px] flex items-center justify-center text-white ${ styles }`} onClick={handleSubmit}>
+            { !loading ? (
+                <span> { title } </span>
+            ): (
+                <LucideLoader2 className="animate-spin delay-150ms text-[22px]"/>
+            )}
         </button>
     )
 }

@@ -8,7 +8,9 @@ const AppLayout = ({ children }) => {
 
     const pagesWithoutNavbar = 
         pathname.includes("/signup") || 
-        pathname.includes("/login");
+        pathname.includes("/login") || 
+        pathname.includes("/forgot-password") ||
+        pathname.includes("/reset-password");
 
     return (
         <div className="h-full w-full overflow-auto relative">
