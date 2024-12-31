@@ -2,7 +2,7 @@ import axios from "axios";
 import dotenv from 'dotenv';
 dotenv.config()
 
-axios.defaults.baseURL = "https://foodgo-server.onrender.com/api";
+axios.defaults.baseURL = process.env.BASE_API;
 
 
 axios.interceptors.request.use(async (config)=> {
