@@ -40,7 +40,7 @@ const GlobalProvider = ({ children }) => {
             setUser(JSON.parse(response));
         }
         else {
-            if(!pathname.includes("/login") && !pathname.includes("/signup") && !pathname.includes("/forgot-password") && !pathname.includes("/reset-password")) {
+            if(!pathname.includes("/login") && !pathname.includes("/signup") && !pathname.includes("/forgot-password") && !pathname.includes("/reset-password") && !pathname.includes("/verify-email")) {
                 window.location.href = "/login";
             }
             console.log("no user found");

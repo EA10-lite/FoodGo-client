@@ -43,10 +43,14 @@ const Page = () => {
     return (
         <div className="h-full w-full flex items-center justify-center">
             <div className="w-[400px] mx-auto border border-secondary border-opacity-40 shadow-md p-[24px] rounded-[10px]">
-                <div className="head mb-[40px]">
+                <div className="head mb-[20px]">
                     <Logo />
                 </div>
                 <div className="body">
+                    <div className="form-heading mb-[24px]">
+                        <h2 className="text-[22px] font-[600]"> Login </h2>
+                        <p className="text-secondary text-sm"> Sign in with email and password to get access to your dashboard, and order history! </p>
+                    </div>
                     <Formik
                         initialValues={{ email: "", password: "" }}
                         onSubmit={(values)=> handleLogin(values)}

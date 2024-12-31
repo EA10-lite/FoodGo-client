@@ -19,6 +19,11 @@ export const login_schema = Yup.object().shape({
 export const forgot_password = Yup.object().shape({
   email,
 });
+
+export const verify_email = Yup.object().shape({
+  code: Yup.string().min(4, "Enter a 4-digit code!").max(4, "Enter a 4-digit code!").required("Verification code required"),
+});
+
 export const reset_password = Yup.object().shape({
   code: Yup.string().min(4, "Enter a 4-digit code!").max(4, "Enter a 4-digit code!").required("Verification code required"),
   password: password,

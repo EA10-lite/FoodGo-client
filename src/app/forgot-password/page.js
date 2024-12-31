@@ -44,32 +44,37 @@ const Page = () => {
     return (
         <div className="h-full w-full flex items-center justify-center">
             <div className="w-[400px] mx-auto border border-secondary border-opacity-40 shadow-md p-[24px] rounded-[10px]">
-                <div className="head mb-[40px]">
+                <div className="head mb-[20px]">
                     <Logo />
                 </div>
                 { !isFormSubmitted ? (
                     <div className="body">
-                    <Formik
-                        initialValues={{ email: "" }}
-                        onSubmit={(values)=> handleForgotPassword(values)}
-                        validationSchema={forgot_password}
-                    >
-                        {()=> (
-                            <>
-                                <Field 
-                                    name="email"
-                                    label='Email Address'
-                                    placeholder="example: johndoe@gmail.com"
-                                    type="email"
-                                />
+                        <div className="form-heading mb-[24px]">
+                            <h2 className="text-[22px] font-[600]"> Reset Password </h2>
+                            <p className="text-secondary text-sm"> Enter the email associated with your account, and we'll send you the verification code to continue this process! </p>
+                         </div>
 
-                                <Submit 
-                                    title="Signin"
-                                    loading={loading}
-                                />
-                            </>
-                        )}
-                    </Formik>
+                        <Formik
+                            initialValues={{ email: "" }}
+                            onSubmit={(values)=> handleForgotPassword(values)}
+                            validationSchema={forgot_password}
+                        >
+                            {()=> (
+                                <>
+                                    <Field 
+                                        name="email"
+                                        label='Email Address'
+                                        placeholder="example: johndoe@gmail.com"
+                                        type="email"
+                                    />
+
+                                    <Submit 
+                                        title="Signin"
+                                        loading={loading}
+                                    />
+                                </>
+                            )}
+                        </Formik>
 
                     <p className="text-center font-[500] mt-[20px] text-opacity-60"> Back to <Link href="/login" className="text-primary underline"> Login </Link></p>
                     </div>

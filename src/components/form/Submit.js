@@ -10,7 +10,7 @@ const Submit = ({
     const { handleSubmit } = useFormikContext();
 
     return (
-        <button type="button" className={`bg-primary text-white w-full px-[16px] py-[12px] rounded-[8px] flex items-center justify-center text-white ${ styles }`} onClick={handleSubmit}>
+        <button type="button" className={`bg-primary text-white w-full px-[16px] py-[12px] rounded-[133.33px] flex items-center justify-center text-white ${ styles }`} onClick={handleSubmit}>
             { !loading ? (
                 <span> { title } </span>
             ): (

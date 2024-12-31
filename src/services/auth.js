@@ -21,3 +21,7 @@ export const resetPassword = (body)=> {
 export const verifyAccount = (body)=> {
     return client.post(`/auth/verifyEmail`, {...body});
 }
+
+export const sendVerificationCode = (body)=> {
+    return client.post(`/auth/sendVerificationCode`, {...body});
+}
