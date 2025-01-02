@@ -11,23 +11,23 @@ import {
 import { Formik } from "formik";
 import { MdClose } from "react-icons/md"
 
-import { Field, Submit } from "../form";
+import { Field, ImageInputs, Select, Submit, Texbox } from "../form";
 
 const CreateNewFood = ({ loading, submit }) => {
     return (
         <AlertDialog>
             <AlertDialogTrigger className="btn-primary"> Add New Food </AlertDialogTrigger>
-            <AlertDialogContent>
-                <AlertDialogHeader className="h-[480px]">
-                <AlertDialogTitle className="relative mb-[24px] text-base text-center font-[700] leading-[22.4px]">
+            <AlertDialogContent className="p-0">
+                <AlertDialogHeader className="h-[580px] overflow-auto px-[24px] py-[24px]">
+                <AlertDialogTitle className="relative mb-[24px] text-base font-[700] leading-[22.4px]">
                     Add New Food
                     <AlertDialogCancel className="border-none shadow-none absolute top-[-8px] right-0 h-[36px] hover:bg-[none]">
                         <MdClose className="text-xl" />
                     </AlertDialogCancel>
                 </AlertDialogTitle>
-                <AlertDialogDescription>
+                <AlertDialogDescription className="px-24px">
                     <Formik
-                        initialValues={{ name: "", desc: "" }}
+                        initialValues={{ name: "", desc: "", pictures: "" }}
                     >
                         {()=> (
                             <>
@@ -35,6 +35,43 @@ const CreateNewFood = ({ loading, submit }) => {
                                     name="name"
                                     label="Name of food"
                                     placeholder="example: chicken, shawarma, etc."
+                                />
+
+                                <div className="flex items-start gap-4">
+                                    <div className="w-[50%]">
+                                        <Field 
+                                            name="price"
+                                            type="number"
+                                            label="Price"
+                                            min={1}
+                                        />
+                                    </div>
+                                    <div className="w-[50%]">
+                                        <Select 
+                                            name="category"
+                                            label="Category"
+                                            options={[
+                                                { title: "Burger", value: "burger" },
+                                                { title: "Chicken", value: "chicken" },
+                                                { title: "Pizza", value: "pizza" },
+                                                { title: "Shawarma", value: "shawarma" },
+                                                { title: "Sushi", value: "sushi" },
+                                                { title: "Rice", value: "rice" },
+                                            ]}
+                                        />
+                                    </div>
+
+                                </div>
+
+                                <ImageInputs 
+                                    name="pictures"
+                                    label="Food Images"
+                                />
+
+                                <Texbox 
+                                    label="Description (optional)"
+                                    name="desc"
+                                    placeholder="Tell customers about how the food was made"
                                 />
 
                                 <Submit title="Submit" />

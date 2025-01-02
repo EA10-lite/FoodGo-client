@@ -4,3 +4,6 @@ export { default as Submit } from "./Submit";
 export { default as Error } from "./Error";
 export { default as Select } from "./Select";
 export { default as ImageInput } from "./ImageInput";
+export { default as ImageInputs } from "./ImageInputs";
+export { default as CustomSelect } from "./CustomSelect";
+export { default as Texbox } from "./Textbox";

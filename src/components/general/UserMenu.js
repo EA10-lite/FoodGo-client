@@ -28,10 +28,6 @@ const UserMenu = ({ initials, img }) => {
             <ul>
                 <li className="text-[#1E1E1E] text-sm leading-[24px] py-[12px] px-[24px]"> <Link href="/profile"> Profile </Link></li>
                 <li className="text-[#1E1E1E] text-sm leading-[24px] py-[12px] px-[24px]"> <Link href="/settings"> Account settings </Link></li>
-                <li className="text-[#1E1E1E] text-sm leading-[24px] py-[12px] px-[24px]"> <Link href="/settings"> Visit the help center </Link></li>
-                <li className="text-[#1E1E1E] text-sm leading-[24px] py-[12px] px-[24px] border-t border-[#D9D9D9]"> <Link href="/settings"> $ USD </Link></li>
-                <li className="text-[#1E1E1E] text-sm leading-[24px] py-[12px] px-[24px] border-b border-[#D9D9D9]"> <Link href="/settings"> Language </Link></li>
-                <li className="text-[#1E1E1E] text-sm leading-[24px] py-[12px] px-[24px]"> <Link href="/settings"> Refer a friend </Link></li>
                 <li className="text-[#1E1E1E] text-sm leading-[24px] py-[12px] px-[24px] cursor-pointer" onClick={logout}> Logout </li>
             </ul>
         </div>

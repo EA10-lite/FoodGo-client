@@ -25,6 +25,47 @@ a {
   text-decoration: none;
 }
 
+input,
+button,
+select,
+textarea {
+  outline: none !important;
+  background-color: transparent;
+}
+
+
+
+input.error-input,
+input.active-input,
+select.error-input,
+select.active-input,
+button.error-input,
+button.active-input,
+textarea.active-input {
+  box-shadow: 0px 0px 0px 4px #FFF1F2;
+}
+
+input.error-input::placeholder,
+select.error-input::placeholder,
+textarea.error-input::placeholder {
+  color: #000;
+}
+
+input.active-input,
+select.active-input,
+button.active-input,
+textarea.active-input  {
+  background-color: white;
+  border: 1px solid #FF7622;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #644DED14 inset !important;
+  -webkit-text-fill-color: #000 !important; 
+  -webkit-border: 1px solid #ff7622;
+}
+
+
 @media (prefers-color-scheme: light) {
   html {
     color-scheme: light;

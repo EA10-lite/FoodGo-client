@@ -1,15 +1,13 @@
-import React from "react";
-import { useFormikContext } from "formik";
-
+import React, { useRef } from "react";
 import { convertBase64 } from "@/utils/converter";
+import { SlCloudUpload } from "react-icons/sl";
 
-const ImageInput = ({ name, setImage, inputRef, title  }) => {
-    const { setFieldValue } = useFormikContext();
+const ImageInput = ({ name, setImage }) => {
+    const inputRef = useRef(null);
 
     const handleChange = async (e) => {
         try {
             const file = e.target.files[0];
-            setFieldValue(name, file.name);
     
             const img = await convertBase64(file);
             setImage(img)
@@ -20,14 +18,19 @@ const ImageInput = ({ name, setImage, inputRef, title  }) => {
     
 
     return (
-        <div className="">
-            <button 
-                className="btn-secondary bg-white rounded-[8px!important]"
-                onClick={()=> inputRef.current.click()}
-            > 
-                { title }
-            </button>
-
+        <div 
+            className="image-input border border-[#9C9BA6] border-opacity-50 w-[111px] h-[101px] rounded-[8px] flex items-center justify-center"
+            style={{borderStyle: "dashed"}}
+        >
+            <div className="flex flex-col items-center gap-1">
+                <div 
+                    className="flex items-center justify-center w-[42px] h-[42px] rounded-full bg-[#F3F3F8]"
+                    onClick={()=> inputRef.current.click()}
+                >
+                    <SlCloudUpload className="text-[22px] text-[#523BB1]" />    
+                </div>
+                <p className="text-[13px] leading-[16px] font-[500] text-[#808192]"> Add </p>
+            </div>
             <input
                 type="file" 
                 accept=".jpg,.png,.webp,.jpeg"

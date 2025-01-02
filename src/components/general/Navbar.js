@@ -8,7 +8,7 @@ import NotificationMenu from "./NotificationMenu";
 const Navbar  = () => {
     const pathname = usePathname();
     return (
-        <nav className="navbar mb-[40px]">
+        <nav className="navbar mb-[40px] border-b border-dark border-opacity-25">
             <div className="container flex items-center justify-between mx-auto py-[12px]">
                 <div className="left">
                     <Logo />
