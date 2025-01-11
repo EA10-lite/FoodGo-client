@@ -11,7 +11,7 @@ import {
 import { Formik } from "formik";
 import { MdClose } from "react-icons/md"
 
-import { Field, ImageInputs, Select, Submit, Texbox } from "../form";
+import { Field, ImageInputs, MultiSelect, Select, Submit, Texbox } from "../form";
 
 const CreateNewFood = ({ loading, submit }) => {
     return (
@@ -59,6 +59,19 @@ const CreateNewFood = ({ loading, submit }) => {
                                                 { title: "Rice", value: "rice" },
                                             ]}
                                         />
+                                    </div>
+
+                                </div>
+                                <div className="flex items-start gap-4">
+                                    <div className="w-[50%]">
+                                        <Field 
+                                            name="preparation_time"
+                                            type="text"
+                                            label="Preparation time"
+                                            min={1}
+                                        />
+                                    </div>
+                                    <div className="w-[50%]">
                                     </div>
 
                                 </div>

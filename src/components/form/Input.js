@@ -36,7 +36,7 @@ const Input = ({
                     onChange={handleChange}
                     onFocus={handleFocus}
                     onBlur={handleBlur}
-                    className={`bg-[#F3F3F8] w-full rounded-[12px] text-secondary text-sm leading-base font-[500] px-[18px] py-[12px] ${
+                    className={`bg-[#F3F3F8] w-full rounded-[12px] text-dark text-sm leading-base font-[500] px-[18px] py-[12px] ${
                         error && visible && "border border-error text-error bg-error bg-opacity-10 text-black error-input"
                     }`}
                     ref={inputRef}

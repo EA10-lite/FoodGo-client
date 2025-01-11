@@ -6,4 +6,5 @@ export { default as Select } from "./Select";
 export { default as ImageInput } from "./ImageInput";
 export { default as ImageInputs } from "./ImageInputs";
 export { default as CustomSelect } from "./CustomSelect";
-export { default as Texbox } from "./Textbox";
+export { default as Textbox } from "./Textbox";
+export { default as MultiSelect } from "./MultiSelect";

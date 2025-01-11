@@ -38,7 +38,7 @@ const Select = ({
                 name={name} 
                 id={name}
                 className={`
-                    bg-[#F3F3F8] w-full rounded-[12px] text-secondary text-sm leading-base font-[500] px-[18px] py-[12px]
+                    bg-primary_light w-full rounded-[12px] text-secondary text-sm leading-base font-[500] px-[18px] py-[12px]
                     ${ errors[name] && touched[name] && "border border-error text-error bg-error bg-opacity-10 text-black error-input" }
                 `} 
                 ref={inputRef} onFocus={handleFocus} onBlur={handleBlur}

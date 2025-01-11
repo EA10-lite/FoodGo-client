@@ -24,10 +24,10 @@ const ImageInput = ({ name, setImage }) => {
         >
             <div className="flex flex-col items-center gap-1">
                 <div 
-                    className="flex items-center justify-center w-[42px] h-[42px] rounded-full bg-[#F3F3F8]"
+                    className="flex items-center justify-center w-[42px] h-[42px] rounded-full bg-primary_light"
                     onClick={()=> inputRef.current.click()}
                 >
-                    <SlCloudUpload className="text-[22px] text-[#523BB1]" />    
+                    <SlCloudUpload className="text-[22px] text-primary" />    
                 </div>
                 <p className="text-[13px] leading-[16px] font-[500] text-[#808192]"> Add </p>
             </div>
