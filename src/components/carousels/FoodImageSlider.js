@@ -14,7 +14,7 @@ const FoodImageSlider = ({ images, name }) => {
       <CarouselContent>
         {images.map((image, index) => (
             <CarouselItem key={index}>
-                <img src={image} alt={name} className="w-full h-full object-cover" /> 
+                <img src={image} alt={name} className="w-full h-[165px] object-cover" /> 
             </CarouselItem>
         ))}
       </CarouselContent>

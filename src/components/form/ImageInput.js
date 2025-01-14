@@ -1,21 +1,17 @@
+"use client";
 import React, { useRef } from "react";
-import { convertBase64 } from "@/utils/converter";
 import { SlCloudUpload } from "react-icons/sl";
 
-const ImageInput = ({ name, setImage }) => {
-    const inputRef = useRef(null);
 
-    const handleChange = async (e) => {
-        try {
-            const file = e.target.files[0];
-    
-            const img = await convertBase64(file);
-            setImage(img)
-        } catch (error) {
-            console.log("error uploading image", error);
-        }
+const ImageInput = ({ name, addFiles, files, loading}) => {
+
+    const inputRef = useRef();
+    const handleClick = () => inputRef.current.click();
+
+    const handleChange = (e) => {
+        const file = e.target.files[0]
+        addFiles(file);
     }
-    
 
     return (
         <div 
@@ -25,19 +21,23 @@ const ImageInput = ({ name, setImage }) => {
             <div className="flex flex-col items-center gap-1">
                 <div 
                     className="flex items-center justify-center w-[42px] h-[42px] rounded-full bg-primary_light"
-                    onClick={()=> inputRef.current.click()}
+                    onClick={handleClick}
                 >
                     <SlCloudUpload className="text-[22px] text-primary" />    
                 </div>
                 <p className="text-[13px] leading-[16px] font-[500] text-[#808192]"> Add </p>
             </div>
-            <input
-                type="file" 
-                accept=".jpg,.png,.webp,.jpeg"
-                className="w-0 h-0" 
-                ref={inputRef} 
-                onChange={handleChange}
-            />
+            <div className="image-btn">
+                <input 
+                    type="file" 
+                    name={name} 
+                    id={name} 
+                    className="w-[0] h-[0]" ref={inputRef} 
+                    accept=".jpg, .jpeg, .png, .avif"
+                    onChange={handleChange}
+                    disabled={loading}
+                />
+            </div>
         </div>
     )
 }

@@ -9,7 +9,7 @@ const Select = ({
     options,
 }) => {
     const inputRef = useRef(null);
-    const { errors, touched, handleChange } = useFormikContext();
+    const { errors, touched, setFieldValue } = useFormikContext();
 
     const handleFocus = () => {
         if (inputRef.current.classList.contains('active')) {
@@ -22,6 +22,12 @@ const Select = ({
     const handleBlur = () => {
         inputRef.current.classList.remove("active");
     }
+
+
+    const handleChange = (e) => {
+        setFieldValue(name, [e.target.value]);
+    }
+
 
     return (
         <div className="form-group mb-5">
@@ -38,11 +44,11 @@ const Select = ({
                 name={name} 
                 id={name}
                 className={`
-                    bg-primary_light w-full rounded-[12px] text-secondary text-sm leading-base font-[500] px-[18px] py-[12px]
+                    bg-[#F3F3F8] w-full rounded-[12px] text-black text-sm leading-base font-[500] px-[18px] py-[12px]
                     ${ errors[name] && touched[name] && "border border-error text-error bg-error bg-opacity-10 text-black error-input" }
                 `} 
                 ref={inputRef} onFocus={handleFocus} onBlur={handleBlur}
-                onChange={handleChange}
+                onChange={(e)=> handleChange(e)}
             >
                 <option value={""}> Choose </option>
                 {options.map((option, index) => (

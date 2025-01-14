@@ -23,6 +23,7 @@ const Page = () => {
     const addNewFood =  async (values) => {
         try {
             setSubmitting(true);
+            console.log("values: ", values);
         } catch (error) {
             
         } finally {
@@ -39,13 +40,16 @@ const Page = () => {
             <div className="header mb-[40px]">
                 <div className="flex items-center justify-between">
                     <h2 className="text-xl text-dark font-[600]"> Food lists </h2>
-                    <CreateNewFood loading={submitting} submit={addNewFood} />
+                    <CreateNewFood 
+                        loading={submitting} 
+                        submit={addNewFood} 
+                    />
                 </div>
             </div>
 
             <div className="body">
                 { loading ? (
-                    <div className="grid grid-cols-4 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                         {[1,2,3,4,5,6,7,8].map(skeleton => (
                             <FoodCardSkeleton 
                                 key={skeleton}
@@ -53,7 +57,7 @@ const Page = () => {
                         ))}
                     </div>
                 ) : (
-                    <div className="grid grid-cols-4 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                         {food.map((food, index)=> (
                             <FoodCard 
                                 food={food}
