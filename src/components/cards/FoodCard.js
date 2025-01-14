@@ -11,15 +11,17 @@ const FoodCard = ({ food, handleClick }) => {
                         images={food.pictures}
                     />
                 </div>
-                <div className="card-details px-[12px] flex flex-col justify-between">
-                    <h4 className="text-sm font-[500] text-dark"> { food.name } </h4>
-                    <h4 className="text-sm font-[500] text-dark"> ${ food.price } </h4>
-                </div>
-                <div className="card-btn px-[12px] hidden">
-                    <EditFood 
-                        food={food}
-                        handleClick={handleClick}
-                    />
+                <div className="flex justify-between items-center gap-3">
+                    <div className="card-details px-[12px]">
+                        <h4 className="text-sm font-[500] text-dark"> { food.name } </h4>
+                        <h4 className="text-sm font-[500] text-dark"> ${ food.price } </h4>
+                    </div>
+                    <div className="card-btn px-[12px]">
+                        <EditFood 
+                            food={food}
+                            handleClick={handleClick}
+                        />
+                    </div>
                 </div>
             </div>
         </div>

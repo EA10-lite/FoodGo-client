@@ -14,7 +14,7 @@ const EditFood = ({ loading, submit, food }) => {
     return (
         <AlertDialog>
             <AlertDialogTrigger 
-                className="border border-dark text-sm font-[500] text-dark px-[16px] py-[4px] rounded-[4px] hover:bg-dark hover:text-white"
+                className="border border-confi text-sm font-[500] text-dark py-[6px] hover:bg-primary hover:text-white min-w-[88px] hover:border-none rounded-[132px]"
             > View </AlertDialogTrigger>
             <AlertDialogContent>
                 <AlertDialogHeader>
