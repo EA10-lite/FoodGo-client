@@ -4,17 +4,27 @@ import { CreateNewFood } from "@/components/modals";
 import { FoodCard } from "@/components/cards";
 import { FoodCardSkeleton } from "@/components/skeletons";
 import food from "@/data/food";
+import { add_new_dish } from "@/services/food";
+import { useToast } from "@/hooks/use-toast";
+import { get_restaurant_foods } from "@/services/restaurant";
 
 const Page = () => {
-    const [loading, setLoading] = useState(true);
+    const { toast } = useToast();
+
+    const [loading, setLoading] = useState(false);
+    const [data, setData] = useState([]);
     const getRestaurantFoods = async () => {
         try {
-            setTimeout(() => {
-                setLoading(false);
-            }, 3000);
+            setLoading(true);
+            const response = await get_restaurant_foods();
+            if(response?.data?.success) {
+                setData(response?.data?.result);
+                console.log("data: ", data);
+            }
         } catch (error) {
             
         } finally {
+            setLoading(false);
         }
     }
 
@@ -23,9 +33,22 @@ const Page = () => {
     const addNewFood =  async (values) => {
         try {
             setSubmitting(true);
-            console.log("values: ", values);
+            const response = await add_new_dish(values);
+            if(response?.data?.success) {
+                toast({ 
+                    title: "Login success", 
+                    description: "Redirecting you to dashboard!",
+                    top: "0", 
+                });
+
+                window.location.reload();
+            }
         } catch (error) {
-            
+            toast({ 
+                title: "Failed", 
+                description: error?.response?.data?.message ||  "Failed to add new dish",
+                top: "0", 
+            })
         } finally {
             setSubmitting(false);
         }
@@ -58,7 +81,7 @@ const Page = () => {
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                        {food.map((food, index)=> (
+                        {data?.map((food, index)=> (
                             <FoodCard 
                                 food={food}
                                 key={index}

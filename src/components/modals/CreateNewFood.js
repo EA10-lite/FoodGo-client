@@ -40,7 +40,7 @@ const CreateNewFood = ({ loading, submit }) => {
         }
 
         else {
-            submit({...values, files})
+            submit({...values, pictures: files})
         }
     }
     return (
@@ -58,7 +58,7 @@ const CreateNewFood = ({ loading, submit }) => {
                     <Formik
                         initialValues={{ 
                             name: "", 
-                            desc: "", 
+                            about: "", 
                             pictures: "", 
                             price: "", 
                             preparation_time: "",
@@ -73,6 +73,7 @@ const CreateNewFood = ({ loading, submit }) => {
                                     name="name"
                                     label="Name of food"
                                     placeholder="example: chicken, shawarma, etc."
+                                    disabled={loading}
                                 />
 
                                 <div className="flex flex-col md:flex-row md:items-start gap-4">
@@ -82,6 +83,7 @@ const CreateNewFood = ({ loading, submit }) => {
                                             type="number"
                                             label="Price"
                                             min={1}
+                                            disabled={loading}
                                         />
                                     </div>
                                     <div className="w-full md:w-[50%]">
@@ -90,6 +92,7 @@ const CreateNewFood = ({ loading, submit }) => {
                                             type="text"
                                             label="Preparation time"
                                             min={1}
+                                            disabled={loading}
                                         />
                                     </div>
 
@@ -105,7 +108,7 @@ const CreateNewFood = ({ loading, submit }) => {
                                         { title: "Sushi", value: "sushi" },
                                         { title: "Rice", value: "rice" },
                                     ]}
-                                    han
+                                    disabled={loading}
                                 />
 
                                 <ImageInputs 
@@ -113,15 +116,17 @@ const CreateNewFood = ({ loading, submit }) => {
                                     label="Food Images"
                                     loading={loading}
                                     handleSubmit={setFiles}
+                                    disabled={loading}
                                 />
 
                                 <Textbox 
                                     label="Description (optional)"
-                                    name="desc"
+                                    name="about"
                                     placeholder="Tell customers about how the food was made"
+                                    disabled={loading}
                                 />
 
-                                <Submit title="Submit" />
+                                <Submit title="Submit" loading={loading} />
                             </>
                         )}
                     </Formik>

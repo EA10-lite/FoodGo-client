@@ -6,7 +6,8 @@ axios.defaults.baseURL = process.env.BASE_API;
 
 
 axios.interceptors.request.use(async (config)=> {
-    config.headers.Authorization = `Bearer ${ localStorage.getItem("foodgo-token")}`;
+    const token = localStorage.getItem("foodgo-token")
+    config.headers.Authorization = `Bearer ${token.slice(1, token.length - 1)}`;
 
     return config;
 });
