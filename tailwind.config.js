@@ -34,6 +34,12 @@ module.exports = {
   			}
   		},
 		screens: {
+			smbelow: {
+				max: '576px'
+			},
+			mdbelow: {
+				max: '768px'
+			},
 			sm: '576px',
 			md: '768px',
 			lg: '991px',

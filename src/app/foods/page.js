@@ -1,9 +1,8 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { CreateNewFood } from "@/components/modals";
 import { FoodCard } from "@/components/cards";
 import { FoodCardSkeleton } from "@/components/skeletons";
-import food from "@/data/food";
 import { add_new_dish } from "@/services/food";
 import { useToast } from "@/hooks/use-toast";
 import { get_restaurant_foods } from "@/services/restaurant";
@@ -59,7 +58,7 @@ const Page = () => {
     },[])
 
     return (
-        <div className="container mx-auto">
+        <div className="container mx-auto px-[16px]">
             <div className="header mb-[40px]">
                 <div className="flex items-center justify-between">
                     <h2 className="text-xl text-dark font-[600]"> Food lists </h2>

@@ -13,11 +13,13 @@ import { MdClose } from "react-icons/md"
 
 import { Field, ImageInputs, MultiSelect, Select, Submit, Textbox } from "../form";
 import { add_food } from "@/schema/food";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useCategoryContext } from "@/context/CategoryContext";
 
 const CreateNewFood = ({ loading, submit }) => {
     const { toast } = useToast();
+    const { categories } = useCategoryContext();
 
     const [files, setFiles] = useState([]);
 
@@ -100,14 +102,7 @@ const CreateNewFood = ({ loading, submit }) => {
                                 <Select 
                                     name="category"
                                     label="Category"
-                                    options={[
-                                        { title: "Burger", value: "burger" },
-                                        { title: "Chicken", value: "chicken" },
-                                        { title: "Pizza", value: "pizza" },
-                                        { title: "Shawarma", value: "shawarma" },
-                                        { title: "Sushi", value: "sushi" },
-                                        { title: "Rice", value: "rice" },
-                                    ]}
+                                    options={categories?.map((category => ({ title: category?.title, value: category?.title})))}
                                     disabled={loading}
                                 />
 

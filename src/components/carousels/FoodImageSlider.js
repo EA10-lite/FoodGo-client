@@ -10,7 +10,7 @@ import {
 
 const FoodImageSlider = ({ images, name }) => {
   return (
-    <Carousel className="w-full h-full">
+    <Carousel className="w-full min-h-[165px]">
       <CarouselContent>
         {images.map((image, index) => (
             <CarouselItem key={index}>

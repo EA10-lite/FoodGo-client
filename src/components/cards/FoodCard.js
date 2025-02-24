@@ -11,7 +11,7 @@ const FoodCard = ({ food, handleClick }) => {
                         images={food.pictures}
                     />
                 </div>
-                <div className="flex justify-between items-center gap-3">
+                <div className="flex flex-col gap-3">
                     <div className="card-details px-[12px]">
                         <h4 className="text-sm font-[500] text-dark"> { food.name } </h4>
                         <h4 className="text-sm font-[500] text-dark"> ${ food.price } </h4>
